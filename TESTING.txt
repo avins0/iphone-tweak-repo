@@ -16,9 +16,19 @@ Observed successes
 - Syntax and simulated bridge checks covered hide/show, unchanged state,
   wrong process/dock class, missing API/input, and a failed-write readback.
 
+Repository validation
+---------------------
+- Public HTTPS catalog and script downloads succeeded; the hosted script
+  matches the locally tested SHA-256 digest.
+- The device displayed the catalog but blocked installation: Cyanide 1.7.2
+  formats the current version as 18.5.0 and compares strings numerically, so
+  maxIOS=18.5 incorrectly excludes it. Both bounds now explicitly use 18.5.0.
+  This metadata correction does not widen the tested firmware range.
+- Installation after refreshing this correction still needs device validation.
+
 Not yet validated
 -----------------
-- Hosting, catalog refresh and installation through Sources.
+- Installation through Sources after the version-bound correction below.
 - Package removal after restoration and behavior after restart/reboot.
 - Other iPhone/iPad models or other iOS versions.
 - Interaction with other tweaks or long-running sessions.
