@@ -1,0 +1,36 @@
+Hardware validation, 2026-10-08
+===============================
+Target: iPhone16,2 / iPhone 15 Pro Max / A17 Pro / iOS 18.5 (22F76).
+Runtime: kolbicz/Cyanide 1.7.2, commit
+ee9bed2db688aeb51a96db26930a1c5ff84bf491.
+
+Observed successes
+------------------
+- A custom connection probe verified the SpringBoard application object and
+  read the same PID reported by the runtime's process lookup.
+- Built-in Drag Coefficient applied 0.50 and restored 1.00; both values were
+  read back in the runtime log and the user observed the expected animations.
+- Dock Backdrop, imported as a local QuickLoader file, changed hidden from
+  false to true, then from true to false. Both readbacks produced explicit PASS
+  lines. The user reported that the visual tweak worked.
+- Syntax and simulated bridge checks covered hide/show, unchanged state,
+  wrong process/dock class, missing API/input, and a failed-write readback.
+
+Not yet validated
+-----------------
+- Hosting, catalog refresh and installation through Sources.
+- Package removal after restoration and behavior after restart/reboot.
+- Other iPhone/iPad models or other iOS versions.
+- Interaction with other tweaks or long-running sessions.
+- Loading custom native code, native hooks, APT/dpkg, root shell or a full
+  jailbreak environment. This script uses existing code through RemoteCall.
+
+Known runtime UI behavior
+-------------------------
+Cyanide can leave its Activity spinner visible after a live numeric setting
+already applied. The observed animation restoration was verified by readback;
+Hide dismisses the Activity view. Treat explicit tweak result lines and visible
+behavior as the evidence, not the spinner or a generic completion message.
+
+This file intentionally contains no raw device logs, unique device identifiers,
+account credentials or developer signing material.

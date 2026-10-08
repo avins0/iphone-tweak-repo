@@ -1,0 +1,19 @@
+{
+  "repoName": "Local iPhone Tweaks",
+  "author": "avins0",
+  "tweaks": [
+    {
+      "id": "dev.avins0.dock-backdrop",
+      "name": "Dock Backdrop",
+      "description": "Hide or show the background behind the Home Screen dock. To restore before removing, switch Hide Dock Background OFF and apply again. Tested on iPhone 15 Pro Max, iOS 18.5, Cyanide 1.7.2.",
+      "version": "1.0.0",
+      "symbol": "dock.rectangle",
+      "author": "avins0",
+      "scriptURL": "https://raw.githubusercontent.com/avins0/iphone-tweak-repo/main/scripts/dock_backdrop_v1.js",
+      "minIOS": "18.5",
+      "maxIOS": "18.5",
+      "compatibilityNote": "Verified on iPhone16,2 / A17 Pro / iOS 18.5 (22F76) using Cyanide 1.7.2. Other hardware is untested. Restore the background before removing or replacing the script; removal alone does not undo the view change.",
+      "unsupportedMessage": "This version is limited to iOS 18.5; other firmware versions have not been tested."
+    }
+  ]
+}
