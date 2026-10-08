@@ -30,8 +30,8 @@ Only the iOS 18.5 firmware range is enabled in the catalog. Other hardware,
 future updates and interactions with other tweaks remain untested.
 
 The tested local file is byte-for-byte identical to the repository payload.
-The catalog is hosted. Installation needs on-device validation after correcting
-the iOS version bounds to the runtime's three-component format (18.5.0).
+The catalog is hosted and Sources installation is verified on the test phone.
+Its iOS bounds use the runtime's three-component version format (18.5.0).
 See TESTING.txt and SHA256SUMS for the verified scope and payload digest.
 
 Credits and references
@@ -48,6 +48,6 @@ Publication
 -----------
 The repository and script URLs use direct HTTPS on raw.githubusercontent.com.
 They do not depend on the default Cyanide source's broken custom-domain redirect.
-The repository uses branch main. The catalog appeared on the device; installing
-with the corrected version bounds and removal still need validation.
+The repository uses branch main. Installation and execution through Sources
+are verified. Package removal and reboot/re-enable behavior remain untested.
 See TESTING.txt for status.
